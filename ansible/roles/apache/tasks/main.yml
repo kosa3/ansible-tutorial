@@ -1,0 +1,7 @@
+- name: install the latest version of Apache
+  dnf:
+    name: httpd
+    state: latest
+
+- name: apache start / enable
+  service: name=httpd state=started enabled=yes

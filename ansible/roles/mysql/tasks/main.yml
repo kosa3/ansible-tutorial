@@ -1,0 +1,3 @@
+- name: mysql8 install
+  dnf:
+    name: '@mysql:8.0'

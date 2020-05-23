@@ -1,0 +1,26 @@
+- name: install epel
+  dnf:
+    name: 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm'
+    state: present
+
+- name: install remi
+  dnf:
+    name: 'https://rpms.remirepo.net/enterprise/remi-release-8.rpm'
+    state: present
+
+- name: enable PowerTools
+  shell:
+    cmd: dnf config-manager --set-enabled PowerTools
+
+- name: install php
+  shell:
+    cmd: dnf module install -y php:remi-{{ php_version }}
+
+- name: install modules
+  dnf:
+    name: ['php-devel', 'php-mbstring', 'php-mysqlnd', 'php-opcache', 'php-pdo', 'php-pecl-zip', 'php-xml']
+    state: present
+
+- name: install php
+  shell:
+    cmd: /usr/sbin/apachectl restart
