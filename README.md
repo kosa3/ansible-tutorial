@@ -73,6 +73,9 @@ ok: [192.168.33.12]
 ..........中略
 ```
 
+<img width="1281" alt="スクリーンショット 2020-05-23 16 10 47" src="https://user-images.githubusercontent.com/19683276/82725594-eaa9e480-9d18-11ea-9409-4f50e623158e.png">
+
+
 ## vagrantの状態をグローバルに確認する
 
 ```
